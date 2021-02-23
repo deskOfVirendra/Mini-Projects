@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSizes(length,width,height) {
+            let area = length * width;
+            let volume = length * width * height;
+            let sizes = [area,volume];
+            return sizes;
+        }
+        console.log(getSizes(3,4,5)[0]);
+        console.log(getSizes(3,4,5)[1])
+    </script>
+</body>
+</html>

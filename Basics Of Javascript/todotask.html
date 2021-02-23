@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script type="text/javascript">
+     let tasks = [];
+     function addTask() {
+        let taskName = window.prompt('Enter task to be added');
+       tasks.push(taskName);
+       console.log('task added successfully');
+       showTasks();
+     }
+
+     function deleteTask() {
+        let taskName = window.prompt('Enter task name to be deleted!!!');
+        if(!tasks.includes(taskName)){ alert('not found'); }
+        else {
+        tasks.splice(tasks.indexOf(taskName),1);
+        }
+        showTasks();
+         }
+     
+     function showTasks() {
+        let resultSpace =  document.getElementById('result');
+        resultSpace.innerHTML = '';
+        let totalTasks = tasks.length;
+        if(!totalTasks) alert('No tasks available');
+        for(let i = 0; i < totalTasks; i++)
+            resultSpace.innerHTML += '</br>' +  '  ' +  tasks[i];
+     }
+      
+     function isAvailableTasks() {
+
+         let checkAvailableTasks = setInterval(function() {
+            if(tasks.length <= 0 )
+                    document.getElementById('deleteTask').disabled = true;
+            else {
+                 document.getElementById('deleteTask').disabled = false;
+            
+            }
+         },1000);
+        
+     }
+
+
+    </script>
+</head>
+<body onload="isAvailableTasks();showTasks();">
+    <div id='result'></div>
+   
+    <button onclick="addTask()">addTask</button>
+    <button id='deleteTask' onclick="deleteTask()">deleteTask</button>
+</body>
+</html>

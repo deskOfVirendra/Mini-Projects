@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    const output = function(input) {
+
+        if(typeof input !== 'number') return 'Not a Number';
+
+        if((input%3 === 0) && (input%5 === 0) ) return 'FizzBuzz';
+       
+        if(input%3 === 0) return 'Fizz';
+        
+        if(input%5 === 0) return 'Buzz';
+        
+        
+        return input;
+    
+    };
+    console.log(output(7));
+    
+    </script>
+</body>
+</html>

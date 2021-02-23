@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change background </title>
+<style type="text/css">
+body {
+		margin: 0;
+		padding: 0;
+	}
+</style>
+</head>
+<body>
+
+<div class="pink" style="background-color: pink"  onblur="restorePrevious()" ></div>
+
+<script type="text/javascript">
+let parentDiv = document.getElementsByClassName("pink")[0];
+let text;
+let storageText = localStorage.getItem('name');
+
+if(storageText == null)
+ text  = document.createTextNode("this is text.you can edit it by clicking it");
+else 
+text = document.createTextNode(storageText);
+parentDiv.appendChild(text);
+
+parentDiv.addEventListener("click",function() {
+  let noOfTextAreas = document.getElementsByClassName("textarea").length;
+  if(noOfTextAreas == 0) {
+  let html = parentDiv.textContent;
+  parentDiv.innerHTML = `<textarea class="textarea" id="textarea" rows="3" > ${html}</textarea>`;
+  }
+
+  let textarea = document.getElementById('textarea');
+textarea.addEventListener("blur",function() { 
+                   parentDiv.innerHTML = textarea.value;
+                  localStorage.setItem('name',parentDiv.innerHTML);
+});
+
+});
+
+
+</script>
+</body>
+</html>

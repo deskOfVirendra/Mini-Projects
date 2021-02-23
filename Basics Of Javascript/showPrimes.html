@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+function showPrimes(limit) {
+    for(let number=2; number<=limit; number++) 
+         if(isPrime(number)) console.log(number);      
+
+  }
+
+  function isPrime(number) {
+      let isPrime = true;
+        for(let factor = 2;factor <= Math.floor(number/2);factor++){
+           if(number % factor === 0) {
+              isPrime = false;
+              break;
+           }
+        }
+        return isPrime;
+  }
+  showPrimes(20);
+        
+    </script>
+
+
+</body>
+</html>

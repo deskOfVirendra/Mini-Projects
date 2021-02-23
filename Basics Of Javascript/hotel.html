@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hotel = {
+          name : 'Quay',
+          rooms : 40 , 
+          booked : 25 ,
+          gym : true ,
+          checkAvailability : function() {
+              return this.rooms - this.booked;
+          }
+
+        };
+        console.log(hotel.name);
+        console.log(hotel.checkAvailability());
+    </script>
+</body>
+</html>
