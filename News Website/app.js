@@ -1,4 +1,4 @@
-// 119168c142684b23960f8b3f8d7c12d9
+// IT WILL WORK ON LOCALHOST ONLY.TO RUN ON SERVER YOU HAVE TO PAY FOR PREMIUM PLANS.
 const newsContainer = document.getElementById('newsContainer');
 const apiKey = '119168c142684b23960f8b3f8d7c12d9';
 new Promise(function(resolve,reject) {
