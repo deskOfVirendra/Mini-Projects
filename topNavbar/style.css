@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.container {
+    width: 600px;
+    height: 400px;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.navbar {
+    background-color: blue;
+    font-family: sans-serif;
+    color: white;
+    min-width: 100%;
+    height: 40px;
+}
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar li {
+    float: left;
+    padding: 8px 18px 8px 4px;
+}
+
+#navClick {
+    float: left;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.expanded {
+    height: 150px;
+}
+
+.navbar.expanded li {
+    float: none;
+    display: block;
+    padding: 8px;
+
+}
