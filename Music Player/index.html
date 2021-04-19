@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: auto;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container{
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            border:1px solid black;
+            width: 350px;
+            height: 500px;
+            padding:auto;
+            border-radius: 8px;
+            box-shadow: 4px 5px 4px rgb(102, 102, 102);
+            color: floralwhite;
+            background-color:#333;
+        }
+    
+        .image-container img {
+            margin-top: 15px;
+            border-radius:5px;
+        }
+
+        .button-control {
+            background-color: transparent;
+            border: none;
+            padding: 2px;
+            color: white;
+            font-size: 22px;
+            margin:20px;
+            cursor: pointer;
+        }
+        .progress-container {
+           color: red;
+            border-radius: 5px;
+            cursor:pointer;
+            margin: 10px 0;
+            height: 4px;
+            width: 100%;
+        }
+        .progress {
+            width: 100%;
+            height: 10px;
+            color: red;
+        }
+        progress[value]::-webkit-progress-bar {
+  background-color: "green";
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+       <div class="image-container">
+         <img src="thumbnail/saiyaanji.jpg" id="poster" width="280px" height="300">
+       </div>
+       <div class="controls-container">
+        <!-- progress bar should be added her -->
+        <h3 id="title">saiyaanji</h3>
+          <div class="progress-container">
+
+            
+                <audio  id="musicAudio">
+                   <source src="saiyaanji.mp3" type="audio/mpeg" >
+              </audio>
+              <progress class="progress"  value="0" max="100"></progress>
+          </div>
+              <!-- <div class="progress"></div> -->
+              
+          </div>
+        <div class="button-container">
+            <button class="prev button-control">
+                <i class="fa fa-backward" aria-hidden="true"></i>
+            </button>
+            <button class="play button-control">
+                <i class="fa fa-play"  class="playIcon" id="playButton" aria-hidden="true"></i>
+            </button>
+            <button class="next button-control">
+                <i class="fa fa-forward" aria-hidden="true"></i>
+            </button>
+
+        </div>
+       </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
