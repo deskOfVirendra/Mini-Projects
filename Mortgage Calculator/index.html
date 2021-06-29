@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+    <title>Mortgage Calculator</title>
+
+    <style>
+        body {
+            margin-top : 70px;
+            background:#333;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 ">
+                <h1 class="display-3 text-center">
+                    Mortgage Calculator
+                </h1>
+
+                <form>
+                    <div class="form-group mt-4">
+                        <input type="text" id="principal" class="form-control form-control-lg mb-2  " placeholder="Enter Principal...">
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="text" id="interestRate" class="form-control form-control-lg mb-2  " placeholder="Enter Annual Interest Rate(in percent)...">
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="number" id="years" class="form-control form-control-lg mb-2  " placeholder="Enter Period ( in years)...">
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="submit" id="calculate" class="form-control bg-success form-control-lg mb-2  " value="Calculate">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card bg-info mb-2 py-3 pl-2">
+                        <div class="card-block">
+                            <h4>Total Mortgage</h4>
+                            <div id="mortgage"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       const MONTHS_IN_A_YEAR = 12;
+       const PERCENT = 100;
+
+       
+        document.getElementById('calculate').addEventListener('click',function(e) {
+            e.preventDefault();
+
+            const principal = parseInt(document.querySelector('#principal').value);
+        const monthlyInterestRate = parseFloat(document.querySelector('#interestRate').value) / MONTHS_IN_A_YEAR / PERCENT;
+        const period = parseInt(document.querySelector('#years').value) * MONTHS_IN_A_YEAR;
+
+            let mortgage = (principal * monthlyInterestRate *  ( (1+monthlyInterestRate) ** period )) 
+                              /  
+                              ( (1+monthlyInterestRate) ** period - 1 );
+           
+        document.getElementById('mortgage').innerText = Math.round(mortgage);
+        })
+
+    </script>
+</body>
+</html>
